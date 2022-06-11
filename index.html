@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+
+        body{
+            margin: 0 auto;
+            background-color: white;
+            color: black;
+            font-size: 25px;
+          
+        }
+        .card{
+            position: absolute;
+            top: 10%;
+            left: 10%;
+        }
+        .dark-mode {
+        background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="card" style="width: 40rem;background-color: rgb(232, 237, 242);">
+        <div class="card-body">
+            <p class="card-text" id="text" style="font-size: 25px;"></p>
+          </div>
+        <img class="card-img-top" src="https://preview.redd.it/6z05rh5fe7m31.png?auto=webp&s=50b0a0d9740359910cfe9e4c10c80fe07baf7d42" alt="Card image cap">
+      </div>
+      <button onclick="myFunction()" class="btn btn-outline-dark">Toggle dark mode</button>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script>
+        $(document).ready(function(){
+            let clicked = false;
+            $('button').click(function(){
+                $('body').toggleClass("dark-mode")
+                localStorage.setItem("mode","dark-mode")
+            }) 
+            console.log(localStorage)
+            if (localStorage.getItem("mode") === null) {
+            console.log('mistake')
+            }
+            myFunction()
+           
+        })
+        function myFunction() {
+        var x = document.getElementById("text");
+        if (x.innerHTML === "When there are 150+ people here and you want to make friends.<br> But you have introvert soul: ") {
+             x.innerHTML = "When after playing crocodile you thought the answer was default, but it's dfoldable";
+        } else {
+             x.innerHTML = "When there are 150+ people here and you want to make friends.<br> But you have introvert soul: ";
+        }
+}
+     </script>
+</body>
+</html>
